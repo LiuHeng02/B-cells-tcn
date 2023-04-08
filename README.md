@@ -40,13 +40,21 @@
 note：本人使用了kaggle平台的计算资源，GPU为P100，显存为16G，CPU运行内存为13G，硬件配置需求可参考此。
 
 ##运行
+
 ##1特征工程
+
 shap文件夹中的文件，是关于bert模型的特征选择。fea.ipynb文件是关于特征工程的文件，其最终运行结果为进行特征组合且正则化后的152维特征数组。
+
 note:本项目是已使用训练好的Bert模型，微调后对序列进行特征的提取，数据存放在BERT_feature文件夹下。如果想要对于其他序列进行研究，需要在https://github.com/google-research/bert 下载适当的Bert模型并进行训练和微调，也可以尝试专业领域内开源的Bert模型，如protern-bert，BIO-bert等。
+
 ##2模型的构建与训练
+
 TCN-model-train.ipynb文件是关于构建模型，并训练模型。我们采用了5折交叉验证，保存的权重在mymodel2/our_model_TCN_test文件夹下，我们选择了效果最好的一次训练权重，保存在final model文件夹下。
+
 ##3预测示例
+
 predict.ipynb文件是关于预测的代码文件，我们采用10个正样本10个负样本作为运行实列，预测结果保存在result.txt文件中。
+
 note：如果需要对于其他数据集的序列进行预测，需要通过Bert预训练，并提取embedding特征。
 
 
